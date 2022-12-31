@@ -17,4 +17,4 @@ vim.cmd [[ set noswapfile ]]
 vim.wo.number = true
 
 vim.keymap.set('n', '<leader>h', ':nohlsearch<CR>')
-vim.keymap.set('n', '<leader><leader>', require('telescope.builtin').builtin)
+vim.keymap.set('n', '<leader><leader>', require('telescope.builtin').commands)

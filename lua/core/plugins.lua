@@ -14,8 +14,13 @@ local packer_bootstrap = ensure_packer()
 return require('packer').startup(function(use)
   use 'wbthomason/packer.nvim'
   use "rebelot/kanagawa.nvim"
-  use 'nvim-tree/nvim-tree.lua'
-  use 'nvim-tree/nvim-web-devicons'
+  use {
+    'nvim-tree/nvim-tree.lua',
+    requires = {
+      'nvim-tree/nvim-web-devicons', -- optional, for file icons
+    },
+    tag = 'nightly' -- optional, updated every week. (see issue #1193)
+  }
   use 'nvim-lualine/lualine.nvim'
   use 'nvim-treesitter/nvim-treesitter'
   -- completion
@@ -44,6 +49,12 @@ return require('packer').startup(function(use)
     tag = '0.1.0',
     requires = { { 'nvim-lua/plenary.nvim' } }
   }
+
+  use { 'nvim-orgmode/orgmode', config = function()
+    require('orgmode').setup {}
+  end
+  }
+
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if packer_bootstrap then

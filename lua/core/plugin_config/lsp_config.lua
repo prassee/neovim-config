@@ -1,6 +1,6 @@
 require("mason").setup()
 require("mason-lspconfig").setup({
-  ensure_installed = { "sumneko_lua", "solargraph", "pyright" }
+  ensure_installed = { "sumneko_lua", "solargraph", "pyright" , "julials"}
 })
 
 local on_attach = function(_, _)
@@ -40,6 +40,11 @@ require("lspconfig").sumneko_lua.setup {
 }
 
 require("lspconfig").solargraph.setup {
+  on_attach = on_attach,
+  capabilities = capabilities,
+}
+
+require("lspconfig").julials.setup {
   on_attach = on_attach,
   capabilities = capabilities,
 }

@@ -6,7 +6,11 @@ local metals_config = require("metals").bare_config()
 
 -- Example of settings
 metals_config.settings = {
+  superMethodLensesEnabled = true,
+  showInferredType = true,
   showImplicitArguments = true,
+  showImplicitConversionsAndClasses = true,
+  enableIndentOnPaste = true,
   excludedPackages = { "akka.actor.typed.javadsl", "com.github.swagger.akka.javadsl" },
 }
 
@@ -75,5 +79,5 @@ api.nvim_create_autocmd("FileType", {
 })
 
 --require('lspconfig').metals.setup{
---  on_attach = 
+--  on_attach =
 --}

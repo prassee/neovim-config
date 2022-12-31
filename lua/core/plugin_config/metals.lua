@@ -7,11 +7,15 @@ local metals_config = require("metals").bare_config()
 -- Example of settings
 metals_config.settings = {
   superMethodLensesEnabled = true,
-  showInferredType = true,
+  -- enableIndentOnPaste = true,
+  excludedPackages = { "akka.actor.typed.javadsl", "com.github.swagger.akka.javadsl" },
   showImplicitArguments = true,
   showImplicitConversionsAndClasses = true,
-  enableIndentOnPaste = true,
-  excludedPackages = { "akka.actor.typed.javadsl", "com.github.swagger.akka.javadsl" },
+  showInferredType = true,
+  -- enableSemanticHighlighting = true,
+  --fallbackScalaVersion = "2.13.10",
+  serverVersion = "latest.snapshot",
+
 }
 
 -- *READ THIS*
@@ -24,32 +28,7 @@ metals_config.settings = {
 -- Example if you are using cmp how to make sure the correct capabilities for snippets are set
 metals_config.capabilities = require("cmp_nvim_lsp").default_capabilities()
 
--- Debug settings if you're using nvim-dap
-local dap = require("dap")
-
-dap.configurations.scala = {
-  {
-    type = "scala",
-    request = "launch",
-    name = "RunOrTest",
-    metals = {
-      runType = "runOrTestFile",
-      --args = { "firstArg", "secondArg", "thirdArg" }, -- here just as an example
-    },
-  },
-  {
-    type = "scala",
-    request = "launch",
-    name = "Test Target",
-    metals = {
-      runType = "testTarget",
-    },
-  },
-}
-
-metals_config.on_attach = function(_, _)
-  require("metals").setup_dap()
-
+metals_config.on_attach = function(_, bufnr)
   vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, {})
   vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, {})
 
@@ -63,6 +42,41 @@ metals_config.on_attach = function(_, _)
   vim.keymap.set('n', '<leader>cl', vim.lsp.codelens.run, {})
   vim.keymap.set('n', '<leader>sh', vim.lsp.buf.signature_help, {})
   vim.keymap.set('n', '<leader>f', vim.lsp.buf.format, {})
+
+
+  -- Debug settings if you're using nvim-dap
+  local dap = require("dap")
+  dap.configurations.scala = {
+    {
+      type = "scala",
+      request = "launch",
+      name = "Run or test with input",
+      metals = {
+        runType = "runOrTestFile",
+        args = function()
+          local args_string = vim.fn.input("Arguments: ")
+          return vim.split(args_string, " +")
+        end,
+      },
+    },
+    {
+      type = "scala",
+      request = "launch",
+      name = "Run or Test",
+      metals = {
+        runType = "runOrTestFile",
+      },
+    },
+    {
+      type = "scala",
+      request = "launch",
+      name = "Test Target",
+      metals = {
+        runType = "testTarget",
+      },
+    },
+  }
+  require("metals").setup_dap()
 end
 
 -- Autocmd that will actually be in charging of starting the whole thing

@@ -1,6 +1,6 @@
 require("mason").setup()
 require("mason-lspconfig").setup({
-  ensure_installed = { "sumneko_lua", "solargraph", "pyright" , "julials"}
+  ensure_installed = { "sumneko_lua", "solargraph", "pyright", "julials" }
 })
 
 local on_attach = function(_, _)
@@ -24,6 +24,13 @@ local capabilities = require('cmp_nvim_lsp').default_capabilities()
 require("lspconfig").sumneko_lua.setup {
   on_attach = on_attach,
   capabilities = capabilities,
+  commands = {
+    Format = {
+      function()
+        require("stylua-nvim").format_file()
+      end,
+    },
+  },
   settings = {
     Lua = {
       diagnostics = {

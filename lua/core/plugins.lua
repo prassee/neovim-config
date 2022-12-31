@@ -50,6 +50,8 @@ return require('packer').startup(function(use)
     requires = { { 'nvim-lua/plenary.nvim' } }
   }
 
+  use { 'TimUntersberger/neogit', requires = 'nvim-lua/plenary.nvim' }
+
   use { 'nvim-orgmode/orgmode', config = function()
     require('orgmode').setup {}
   end

@@ -14,4 +14,6 @@ I'm still new to NeoVim (previously long time Emacs & interim VSCode user !!!)
 - nvim tree 
 - treesitter & telescope.
 
-
+TODO 
+- [ ] Code Cell like in VSCode 
+- [ ] Mermaid integration. 

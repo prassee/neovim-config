@@ -13,7 +13,10 @@ I'm still new to NeoVim (previously long time Emacs & interim VSCode user !!!)
 - lualine
 - nvim tree 
 - treesitter & telescope.
+- Neogit 
+- using Ctrl+s to save both Insert & Normal mode 
+
 
 TODO 
 - [ ] Code Cell like in VSCode 
-- [ ] Mermaid integration. 
+- [ ] Mermaid integration for drawing diagrams and live preview.  

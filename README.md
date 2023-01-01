@@ -13,7 +13,6 @@ I'm still new to NeoVim (previously long time Emacs & interim VSCode user !!!)
 - lualine
 - nvim tree 
 - treesitter & telescope.
-- Neogit 
 - using Ctrl+s to save both Insert & Normal mode 
 
 

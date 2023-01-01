@@ -7,15 +7,11 @@ local metals_config = require("metals").bare_config()
 -- Example of settings
 metals_config.settings = {
   superMethodLensesEnabled = true,
-  -- enableIndentOnPaste = true,
   excludedPackages = { "akka.actor.typed.javadsl", "com.github.swagger.akka.javadsl" },
   showImplicitArguments = true,
   showImplicitConversionsAndClasses = true,
   showInferredType = true,
-  -- enableSemanticHighlighting = true,
-  --fallbackScalaVersion = "2.13.10",
   serverVersion = "latest.snapshot",
-
 }
 
 -- *READ THIS*
@@ -28,7 +24,7 @@ metals_config.settings = {
 -- Example if you are using cmp how to make sure the correct capabilities for snippets are set
 metals_config.capabilities = require("cmp_nvim_lsp").default_capabilities()
 
-metals_config.on_attach = function(_, bufnr)
+metals_config.on_attach = function(_, _)
   vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, {})
   vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, {})
 

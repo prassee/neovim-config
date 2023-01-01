@@ -21,6 +21,10 @@ end
 
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
+require("neodev").setup({
+  -- add any options here, or leave empty to use the default settings
+})
+
 require("lspconfig").sumneko_lua.setup {
   on_attach = on_attach,
   capabilities = capabilities,
@@ -33,10 +37,13 @@ require("lspconfig").sumneko_lua.setup {
   },
   settings = {
     Lua = {
+      completion  = {
+        callSnippet = "Replace"
+      },
       diagnostics = {
         globals = { "vim" },
       },
-      workspace = {
+      workspace   = {
         library = {
           [vim.fn.expand "$VIMRUNTIME/lua"] = true,
           [vim.fn.stdpath "config" .. "/lua"] = true,

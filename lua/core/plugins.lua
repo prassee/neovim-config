@@ -13,7 +13,7 @@ local packer_bootstrap = ensure_packer()
 
 return require('packer').startup(function(use)
   use 'wbthomason/packer.nvim'
-  use "rebelot/kanagawa.nvim"
+  use "ellisonleao/gruvbox.nvim"
   use {
     'nvim-tree/nvim-tree.lua',
     requires = {
@@ -29,6 +29,8 @@ return require('packer').startup(function(use)
   use 'L3MON4D3/LuaSnip'
   use 'saadparwaiz1/cmp_luasnip'
   use "rafamadriz/friendly-snippets"
+
+  use "folke/neodev.nvim"
 
   use {
     "williamboman/mason.nvim",
@@ -50,7 +52,7 @@ return require('packer').startup(function(use)
     requires = { { 'nvim-lua/plenary.nvim' } }
   }
 
-  use { 'TimUntersberger/neogit', requires = 'nvim-lua/plenary.nvim' }
+  -- use { 'TimUntersberger/neogit', requires = 'nvim-lua/plenary.nvim' }
 
   use { 'nvim-orgmode/orgmode', config = function()
     require('orgmode').setup {}

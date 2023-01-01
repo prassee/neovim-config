@@ -1,5 +1,3 @@
-print("Prassee - Neovim Config [Start] ")
 require("core.keymaps")
 require("core.plugins")
 require("core.plugin_config")
-print("End")

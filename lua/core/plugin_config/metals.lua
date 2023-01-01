@@ -38,6 +38,7 @@ metals_config.on_attach = function(_, _)
   vim.keymap.set('n', '<leader>cl', vim.lsp.codelens.run, {})
   vim.keymap.set('n', '<leader>sh', vim.lsp.buf.signature_help, {})
   vim.keymap.set('n', '<leader>f', vim.lsp.buf.format, {})
+  vim.keymap.set('i', '<C-Space>f', require('cmp').complete, {})
 
 
   -- Debug settings if you're using nvim-dap

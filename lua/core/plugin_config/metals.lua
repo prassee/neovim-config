@@ -34,12 +34,34 @@ metals_config.on_attach = function(_, _)
   vim.keymap.set('n', 'K', vim.lsp.buf.hover, {})
 
   vim.keymap.set('n', '<leader>ds', require('telescope.builtin').lsp_document_symbols, {})
-  vim.keymap.set('n', '<leader>ws', require('telescope.builtin').lsp_workspace_symbols, {})
+  -- vim.keymap.set('n', '<leader>ws', require('telescope.builtin').lsp_workspace_symbols, {})
   vim.keymap.set('n', '<leader>cl', vim.lsp.codelens.run, {})
   vim.keymap.set('n', '<leader>sh', vim.lsp.buf.signature_help, {})
   vim.keymap.set('n', '<leader>f', vim.lsp.buf.format, {})
-  vim.keymap.set('i', '<C-Space>f', require('cmp').complete, {})
+  vim.keymap.set('i', '<C-Space>', require('cmp').complete, {})
 
+  vim.keymap.set("n", "<leader>ws", function()
+    require("metals").hover_worksheet()
+  end)
+
+  vim.keymap.set("n", "<leader>aa", function()
+    vim.diagnostic.setqflist()
+  end)
+
+  -- all workspace errors
+  vim.keymap.set("n", "<leader>ae", function()
+    vim.diagnostic.setqflist({ severity = "E" })
+  end)
+
+  -- all workspace warnings
+  vim.keymap.set("n", "<leader>aw", function()
+    vim.diagnostic.setqflist({ severity = "W" })
+  end)
+
+  -- buffer diagnostics only
+  vim.keymap.set("n", "<leader>d", function()
+    vim.diagnostic.setloclist()
+  end)
 
   -- Debug settings if you're using nvim-dap
   local dap = require("dap")

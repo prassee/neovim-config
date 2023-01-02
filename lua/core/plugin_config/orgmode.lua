@@ -15,7 +15,7 @@ require('nvim-treesitter.configs').setup {
 }
 
 require('orgmode').setup({
-  org_agenda_files = { '/data/org/*' },
+  org_agenda_files = { '/data/org/officelk-*' },
   org_default_notes_file = '/data/org/refile.org',
   org_capture_templates = {
     o = 'Office',
@@ -27,25 +27,25 @@ require('orgmode').setup({
     oj = {
       description = 'Office Journal',
       template = '\n*** %<%Y-%m-%d> %<%A>\n**** %U\n\n%?',
-      target = '/data/org/office-journal.org'
+      target = '/data/org/officelk-journal.org'
     },
     om = {
       description = 'Meeting Notes',
       template = '\n*** %<%Y-%m-%d> %<%A>\n**** %U\n\n%?',
-      target = '/data/org/office-meeting-notes.org'
+      target = '/data/org/officelk-meeting-notes.org'
     },
     e = 'Office Event',
     er = {
       description = 'recurring',
       template = '** %?\n %T',
-      target = '/data/org/office-calendar.org',
-      headline = 'recurring'
+      target = '/data/org/officelk-recurring-calendar.org',
+      -- headline = 'recurring'
     },
     eo = {
       description = 'one-time',
       template = '** %?\n %T',
-      target = '/data/org/office-calendar.org',
-      headline = 'one-time'
+      target = '/data/org/officelk-onetime-calendar.org',
+      -- headline = 'one-time'
     }
   }
 })

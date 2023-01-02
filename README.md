@@ -1,19 +1,24 @@
 ### Prassee's NeoVim Config 
 
 #### Features
-I leant & inherited a modular Lua based config by following this video. 
+I learnt & inherited a modular Lua based config by following this video. 
 https://www.youtube.com/watch?v=J9yqSdvAKXY. 
 
 But made my own set of changes to suit myself. Most of the config should be portable (except org file path !). 
 
 I'm still new to NeoVim (previously long time Emacs & interim VSCode user !!!)
 
-- LSP Config 
-- Org mode config 
+All Lua config :- 
+
+Completed
+- LSP 
+- Org mode 
 - lualine
 - nvim tree 
-- treesitter & telescope.
-- using Ctrl+s to save both Insert & Normal mode 
+- treesitter
+- telescope
+- using `Ctrl+s` to save both Insert & Normal mode 
+- NeoGit 
 
 
 TODO 

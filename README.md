@@ -6,7 +6,8 @@ https://www.youtube.com/watch?v=J9yqSdvAKXY.
 
 But made my own set of changes to suit myself. Most of the config should be portable (except org file path !). 
 
-I'm still new to NeoVim (previously long time Emacs & interim VSCode user !!!)
+I'm still new to NeoVim (previously long time Emacs & interim VSCode user !!!) hence change might be fast moving 
+until I settle with some set of config/s.
 
 All Lua config :- 
 

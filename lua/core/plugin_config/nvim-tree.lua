@@ -28,7 +28,7 @@ require("nvim-tree").setup({
       },
     },
     icons = {
-      webdev_colors = true,
+      webdev_colors = false,
       git_placement = "before",
       -- modified_placement = "after",
       glyphs = {

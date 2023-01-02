@@ -11,7 +11,7 @@ until I settle with some set of config/s.
 
 All Lua config :- 
 
-Completed
+*Completed*
 - LSP 
 - Org mode 
 - lualine
@@ -21,7 +21,6 @@ Completed
 - using `Ctrl+s` to save both Insert & Normal mode 
 - NeoGit 
 
-
-TODO 
+*TODO*
 - [ ] Code Cell like in VSCode 
 - [ ] Mermaid integration for drawing diagrams and live preview.  

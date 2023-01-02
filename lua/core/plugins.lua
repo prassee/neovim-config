@@ -56,11 +56,11 @@ return require('packer').startup(function(use)
 
   use { "nvim-telescope/telescope-file-browser.nvim" }
 
-  use { 'TimUntersberger/neogit',
-    requires = {
-      'nvim-lua/plenary.nvim',
-      'sindrets/diffview.nvim'
-    } }
+--  use { 'TimUntersberger/neogit',
+--    requires = {
+--      'nvim-lua/plenary.nvim',
+--      'sindrets/diffview.nvim'
+--    } }
 
 
   use { 'nvim-orgmode/orgmode', config = function()

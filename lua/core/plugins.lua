@@ -56,13 +56,15 @@ return require('packer').startup(function(use)
 
   use { "nvim-telescope/telescope-file-browser.nvim" }
 
-  use { 'TimUntersberger/neogit',
-    requires = {
-      'nvim-lua/plenary.nvim',
-      'sindrets/diffview.nvim'
-    } }
+--  use { 'TimUntersberger/neogit',
+--    requires = {
+--      'nvim-lua/plenary.nvim',
+--      'sindrets/diffview.nvim'
+--    } }
 
-  use({ "ckipp01/stylua-nvim" })
+  use({ "ckipp01/stylua-nvim", config = function()
+    require("stylua-nvim").setup { config_file = "stylua.toml" }
+  end })
 
   use { 'nvim-orgmode/orgmode', config = function()
     require('orgmode').setup {}

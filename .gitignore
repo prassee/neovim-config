@@ -1,3 +1,4 @@
 plugin/
 .jukit
 lua/.luarc.json
+.luarc.json

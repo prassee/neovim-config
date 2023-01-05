@@ -56,11 +56,11 @@ return require('packer').startup(function(use)
 
   use { "nvim-telescope/telescope-file-browser.nvim" }
 
---  use { 'TimUntersberger/neogit',
---    requires = {
---      'nvim-lua/plenary.nvim',
---      'sindrets/diffview.nvim'
---    } }
+  --  use { 'TimUntersberger/neogit',
+  --    requires = {
+  --      'nvim-lua/plenary.nvim',
+  --      'sindrets/diffview.nvim'
+  --    } }
 
   use({ "ckipp01/stylua-nvim", config = function()
     require("stylua-nvim").setup { config_file = "stylua.toml" }
@@ -70,6 +70,10 @@ return require('packer').startup(function(use)
     require('orgmode').setup {}
   end
   }
+
+  use { "akinsho/toggleterm.nvim", tag = '*', config = function()
+    require("toggleterm").setup()
+  end }
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins

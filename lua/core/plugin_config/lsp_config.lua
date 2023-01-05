@@ -41,6 +41,12 @@ local on_attach = function(_, _)
 
 end
 
+require('cmp').setup({
+  sources = {
+    { name = 'orgmode' }
+  }
+})
+
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
 require("neodev").setup({

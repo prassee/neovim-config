@@ -66,9 +66,15 @@ return require('packer').startup(function(use)
     require("stylua-nvim").setup { config_file = "stylua.toml" }
   end })
 
-  use { 'nvim-orgmode/orgmode', config = function()
-    require('orgmode').setup {}
-  end
+  use { 'nvim-orgmode/orgmode',
+    requires = { {
+      'akinsho/org-bullets.nvim', config = function()
+        require("org-bullets").setup()
+      end
+    } }
+    , config = function()
+      require('orgmode').setup {}
+    end
   }
 
   use { "akinsho/toggleterm.nvim", tag = '*', config = function()

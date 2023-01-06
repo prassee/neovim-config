@@ -19,7 +19,8 @@ All Lua config :-
 - treesitter
 - telescope
 - using `Ctrl+s` to save both Insert & Normal mode 
-- NeoGit 
+- NeoGit
+- ToggleTerm - inline terminal with lazygit support
 
 *TODO*
 - [ ] Code Cell like in VSCode 

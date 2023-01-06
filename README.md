@@ -12,6 +12,7 @@ until I settle with some set of config/s.
 All Lua config :- 
 
 *Completed*
+
 - LSP 
 - Org mode 
 - lualine
@@ -23,5 +24,6 @@ All Lua config :-
 - ToggleTerm - inline terminal with lazygit support
 
 *TODO*
+
 - [ ] Code Cell like in VSCode 
 - [ ] Mermaid integration for drawing diagrams and live preview.  

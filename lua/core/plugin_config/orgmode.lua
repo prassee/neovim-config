@@ -15,6 +15,14 @@ require('nvim-treesitter.configs').setup {
 }
 
 require('orgmode').setup({
+  win_split_mode = {'float', 0.9},
+  org_todo_keywords = { 'TODO', 'DOING', '|', 'CANCELLED', 'DELAYED', 'DONE' },
+  org_todo_keyword_faces = {
+    DOING = ':foreground blue :weight bold',
+    CANCELLED = ':background #FFFFFF :slant italic :underline on',
+    DELAYED = ':background #B3DAFF :slant italic :underline on',
+    TODO = ':background #000000 :foreground red', -- overrides builtin color for `TODO` keyword
+  },
   org_agenda_files = { '/data/org/officelk-*' },
   org_default_notes_file = '/data/org/refile.org',
   org_capture_templates = {
@@ -37,13 +45,13 @@ require('orgmode').setup({
     e = 'Office Event',
     er = {
       description = 'recurring',
-      template = '** %?\n %T',
+      template = '*** %?\n %T',
       target = '/data/org/officelk-recurring-calendar.org',
       -- headline = 'recurring'
     },
     eo = {
       description = 'one-time',
-      template = '** %?\n %T',
+      template = '*** %?\n %T',
       target = '/data/org/officelk-onetime-calendar.org',
       -- headline = 'one-time'
     }

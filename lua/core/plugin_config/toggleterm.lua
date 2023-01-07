@@ -9,5 +9,5 @@ vim.api.nvim_set_keymap("n", "<leader>lg", "<cmd>lua _lazygit_toggle()<CR>", { n
 vim.api.nvim_set_keymap("n", "<leader>t", ":ToggleTerm direction=float<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<leader>|", ":ToggleTerm direction=vertical<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<leader>_", ":ToggleTerm direction=horizontal<CR>", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("v", "<leader><leader><Enter>", ":ToggleTermSendVisualSelection direction=vertical<CR>",
+vim.api.nvim_set_keymap("v", "<leader><leader><Enter>", ":ToggleTermSendVisualSelection <CR>",
   { noremap = true, silent = true })

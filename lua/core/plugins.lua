@@ -1,9 +1,9 @@
 local ensure_packer = function()
   local fn = vim.fn
-  local install_path = fn.stdpath('data') .. '/site/pack/packer/start/packer.nvim'
+  local install_path = fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
   if fn.empty(fn.glob(install_path)) > 0 then
-    fn.system({ 'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path })
-    vim.cmd [[packadd packer.nvim]]
+    fn.system { "git", "clone", "--depth", "1", "https://github.com/wbthomason/packer.nvim", install_path }
+    vim.cmd([[packadd packer.nvim]])
     return true
   end
   return false
@@ -11,26 +11,26 @@ end
 
 local packer_bootstrap = ensure_packer()
 
-return require('packer').startup(function(use)
-  use 'wbthomason/packer.nvim'
-  use "ellisonleao/gruvbox.nvim"
+return require("packer").startup(function(use)
+  use("wbthomason/packer.nvim")
+  use("ellisonleao/gruvbox.nvim")
   use {
-    'nvim-tree/nvim-tree.lua',
+    "nvim-tree/nvim-tree.lua",
     requires = {
-      'nvim-tree/nvim-web-devicons', -- optional, for file icons
+      "nvim-tree/nvim-web-devicons", -- optional, for file icons
     },
-    tag = 'nightly' -- optional, updated every week. (see issue #1193)
+    tag = "nightly", -- optional, updated every week. (see issue #1193)
   }
-  use 'nvim-lualine/lualine.nvim'
-  use 'nvim-treesitter/nvim-treesitter'
+  use("nvim-lualine/lualine.nvim")
+  use("nvim-treesitter/nvim-treesitter")
   -- completion
-  use 'hrsh7th/nvim-cmp'
-  use 'hrsh7th/cmp-nvim-lsp'
-  use 'hrsh7th/cmp-nvim-lsp-signature-help'
-  use 'L3MON4D3/LuaSnip'
-  use 'saadparwaiz1/cmp_luasnip'
-  use "rafamadriz/friendly-snippets"
-  use "folke/neodev.nvim"
+  use("hrsh7th/nvim-cmp")
+  use("hrsh7th/cmp-nvim-lsp")
+  use("hrsh7th/cmp-nvim-lsp-signature-help")
+  use("L3MON4D3/LuaSnip")
+  use("saadparwaiz1/cmp_luasnip")
+  use("rafamadriz/friendly-snippets")
+  use("folke/neodev.nvim")
 
   use {
     "williamboman/mason.nvim",
@@ -38,52 +38,70 @@ return require('packer').startup(function(use)
     "neovim/nvim-lspconfig",
   }
 
-  use({
+  use {
     "scalameta/nvim-metals",
     requires = {
       "nvim-lua/plenary.nvim",
       "mfussenegger/nvim-dap",
     },
-  })
+  }
 
   use {
-    'nvim-telescope/telescope.nvim',
-    tag = '0.1.0',
+    "nvim-telescope/telescope.nvim",
+    tag = "0.1.0",
     requires = { {
-      'nvim-lua/plenary.nvim'
-    } }
+      "nvim-lua/plenary.nvim",
+    } },
   }
 
   use { "nvim-telescope/telescope-file-browser.nvim" }
 
+  use {
+    "jose-elias-alvarez/null-ls.nvim",
+    config = function()
+      require("null-ls").setup()
+    end,
+    requires = { "nvim-lua/plenary.nvim" },
+  }
   --  use { 'TimUntersberger/neogit',
   --    requires = {
   --      'nvim-lua/plenary.nvim',
   --      'sindrets/diffview.nvim'
   --    } }
 
-  use({ "ckipp01/stylua-nvim", config = function()
-    require("stylua-nvim").setup { config_file = "stylua.toml" }
-  end })
-
-  use { 'nvim-orgmode/orgmode',
-    requires = { {
-      'akinsho/org-bullets.nvim', config = function()
-        require("org-bullets").setup()
-      end
-    } }
-    , config = function()
-      require('orgmode').setup {}
-    end
+  use {
+    "ckipp01/stylua-nvim",
+    config = function()
+      require("stylua-nvim").setup { config_file = "stylua.toml" }
+    end,
   }
 
-  use { "akinsho/toggleterm.nvim", tag = '*', config = function()
-    require("toggleterm").setup()
-  end }
+  use {
+    "nvim-orgmode/orgmode",
+    requires = {
+      {
+        "akinsho/org-bullets.nvim",
+        config = function()
+          require("org-bullets").setup()
+        end,
+      },
+    },
+    config = function()
+      require("orgmode").setup {}
+    end,
+  }
+
+  use {
+    "akinsho/toggleterm.nvim",
+    tag = "*",
+    config = function()
+      require("toggleterm").setup()
+    end,
+  }
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if packer_bootstrap then
-    require('packer').sync()
+    require("packer").sync()
   end
 end)

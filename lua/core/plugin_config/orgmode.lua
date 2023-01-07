@@ -15,8 +15,8 @@ require('nvim-treesitter.configs').setup {
 }
 
 require('orgmode').setup({
-  win_split_mode = {'float', 0.9},
-  org_todo_keywords = { 'TODO', 'DOING', '|', 'CANCELLED', 'DELAYED', 'DONE' },
+  win_split_mode = { 'float', 0.95 },
+  org_todo_keywords = { 'TODO(t)', 'DOING(d)', '|', 'CANCELLED(c)', 'DELAYED(l)', 'DONE(n)' },
   org_todo_keyword_faces = {
     DOING = ':foreground blue :weight bold',
     CANCELLED = ':background #FFFFFF :slant italic :underline on',
@@ -26,6 +26,17 @@ require('orgmode').setup({
   org_agenda_files = { '/data/org/officelk-*' },
   org_default_notes_file = '/data/org/refile.org',
   org_capture_templates = {
+    h = 'Home',
+    ht = {
+      description = 'Home Todo',
+      template = '* TODO %?\n %u',
+      target = '/data/org/home-todo.org'
+    },
+    hj = {
+      description = 'Home Journal',
+      template = '\n*** %<%Y-%m-%d> %<%A>\n**** %U\n\n%?',
+      target = '/data/org/home-journal.org'
+    },
     o = 'Office',
     ot = {
       description = 'Office Todo',

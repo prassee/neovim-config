@@ -43,7 +43,8 @@ end
 
 require('cmp').setup({
   sources = {
-    { name = 'orgmode' }
+    { name = 'orgmode' },
+    { name = 'path' },
   }
 })
 

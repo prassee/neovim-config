@@ -15,13 +15,13 @@ require('nvim-treesitter.configs').setup {
 }
 
 require('orgmode').setup({
-  win_split_mode = { 'float', 0.95 },
+  win_split_mode = { 'float', 0.97 },
   org_todo_keywords = { 'TODO(t)', 'DOING(d)', '|', 'CANCELLED(c)', 'DELAYED(l)', 'DONE(n)' },
   org_todo_keyword_faces = {
-    DOING = ':foreground blue :weight bold',
-    CANCELLED = ':background #FFFFFF :slant italic :underline on',
-    DELAYED = ':background #B3DAFF :slant italic :underline on',
-    TODO = ':background #000000 :foreground red', -- overrides builtin color for `TODO` keyword
+    DOING = ':foreground cyan :weight bold',
+    CANCELLED = ':background red :foreground #000000  :slant italic :underline on',
+    DELAYED = ':background #B3DAFF :foreground grey  :slant italic :underline on',
+    TODO = ':background green :foreground white :underline on', -- overrides builtin color for `TODO` keyword
   },
   org_agenda_files = { '/data/org/officelk-*' },
   org_default_notes_file = '/data/org/refile.org',

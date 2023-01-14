@@ -1,3 +1,4 @@
+-- local config = require "lua.luasnip.config"
 local ensure_packer = function()
   local fn = vim.fn
   local install_path = fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
@@ -70,6 +71,20 @@ return require("packer").startup(function(use)
   --    } }
 
   use {
+    "folke/which-key.nvim",
+    config = function()
+      vim.o.timeoutlen = 560
+      require("which-key").setup {
+        -- your configuration comes here
+        -- or leave it empty to use the default settings
+        -- refer to the configuration section below
+      }
+    end,
+  }
+
+  use { "ellisonleao/glow.nvim" }
+
+  use {
     "ckipp01/stylua-nvim",
     config = function()
       require("stylua-nvim").setup { config_file = "stylua.toml" }
@@ -99,6 +114,12 @@ return require("packer").startup(function(use)
     end,
   }
 
+  use { "terrortylor/nvim-comment",
+    config = function()
+      require('nvim_comment').setup()
+    end
+  }
+  --
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if packer_bootstrap then

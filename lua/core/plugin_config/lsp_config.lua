@@ -1,6 +1,6 @@
 require("mason").setup()
 require("mason-lspconfig").setup {
-  ensure_installed = { "sumneko_lua", "solargraph", "pyright", "julials" },
+  ensure_installed = { "sumneko_lua", "pyright", "julials" , "gopls"}, --  "solargraph",
 }
 
 local on_attach = function(_, _)
@@ -39,12 +39,12 @@ local on_attach = function(_, _)
   vim.keymap.set("i", "<C-Space>", require("cmp").complete, {})
 end
 
-require("cmp").setup {
-  sources = {
-    { name = "orgmode" },
-    { name = "path" },
-  },
-}
+--require("cmp").setup {
+--  sources = {
+--    { name = "orgmode" },
+--    { name = "path" },
+--  },
+--}
 
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
@@ -52,15 +52,15 @@ require("neodev").setup {
   -- add any options here, or leave empty to use the default settings
 }
 
-local null_ls = require("null-ls")
-
-null_ls.setup {
-  sources = {
-    null_ls.builtins.formatting.stylua,
-    null_ls.builtins.formatting.black,
-    null_ls.builtins.completion.spell,
-  },
-}
+--local null_ls = require("null-ls")
+--
+--null_ls.setup {
+--  sources = {
+--    null_ls.builtins.formatting.stylua,
+--    null_ls.builtins.formatting.black,
+--    null_ls.builtins.completion.spell,
+--  },
+--}
 
 require("lspconfig").sumneko_lua.setup {
   on_attach = on_attach,
@@ -90,12 +90,17 @@ require("lspconfig").sumneko_lua.setup {
   },
 }
 
-require("lspconfig").solargraph.setup {
+--require("lspconfig").solargraph.setup {
+--  on_attach = on_attach,
+--  capabilities = capabilities,
+--}
+
+require("lspconfig").julials.setup {
   on_attach = on_attach,
   capabilities = capabilities,
 }
 
-require("lspconfig").julials.setup {
+require("lspconfig").gopls.setup {
   on_attach = on_attach,
   capabilities = capabilities,
 }

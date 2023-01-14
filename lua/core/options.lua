@@ -18,3 +18,6 @@ vim.cmd [[ set noswapfile ]]
 vim.wo.number = true
 
 vim.o.clipboard="unnamedplus"
+
+local wk = require("which-key")
+wk.register(_, _)

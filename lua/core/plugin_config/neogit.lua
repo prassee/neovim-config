@@ -70,3 +70,5 @@ neogit.setup {
     }
   }
 }
+
+vim.api.nvim_set_keymap("n", "<leader>ng", ":Neogit<CR>", { noremap = true, silent = true })

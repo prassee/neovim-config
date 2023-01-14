@@ -24,6 +24,6 @@ All Lua config :-
 - ToggleTerm - inline terminal with lazygit support
 
 *TODO*
-
+- [ ] Markdown with preview  
 - [ ] Code Cell like in VSCode 
 - [ ] Mermaid integration for drawing diagrams and live preview.  

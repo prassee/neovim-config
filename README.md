@@ -20,8 +20,7 @@ All Lua config :-
 - treesitter
 - telescope
 - using `Ctrl+s` to save both Insert & Normal mode 
-- NeoGit
-- ToggleTerm - inline terminal with lazygit support
+- NeoGit & ToggleTerm - inline terminal with lazygit support
 
 *TODO*
 - [ ] Markdown with preview  

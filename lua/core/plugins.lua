@@ -20,7 +20,7 @@ return require("packer").startup(function(use)
     requires = {
       "nvim-tree/nvim-web-devicons", -- optional, for file icons
     },
-    tag = "nightly", -- optional, updated every week. (see issue #1193)
+   --  tag = "nightly", -- optional, updated every week. (see issue #1193)
   }
   use("nvim-lualine/lualine.nvim")
   use("nvim-treesitter/nvim-treesitter")
@@ -120,6 +120,9 @@ return require("packer").startup(function(use)
     end
   }
 
+  use { "arakkkkk/kanban.nvim" }
+
+  use { "f-person/git-blame.nvim"}
 
   --
   -- Automatically set up your configuration after cloning packer.nvim

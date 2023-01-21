@@ -10,9 +10,6 @@ I'm still new to NeoVim (previously long time Emacs & interim VSCode user !!!) h
 until I settle with some set of config/s.
 
 
-All Lua config :- 
-================== 
-
 **Completed**
 
 - LSP

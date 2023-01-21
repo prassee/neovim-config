@@ -45,12 +45,12 @@ require('orgmode').setup({
     },
     oj = {
       description = 'Office Journal',
-      template = '\n*** %<%Y-%m-%d> %<%A>\n**** %U\n\n%?',
+      template = '\n*** %<%Y-%m-%d>%<%A>\n**** %U\n\n%?',
       target = '/data/org/officelk-journal.org'
     },
     om = {
       description = 'Meeting Notes',
-      template = '\n*** %<%Y-%m-%d> %<%A>\n**** %U\n\n%?',
+      template = '\n*** %^{What are we discussing?} %U\n\t - %?\n**** Action Items\n\n\t',
       target = '/data/org/officelk-meeting-notes.org'
     },
     e = 'Office Event',

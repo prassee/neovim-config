@@ -120,7 +120,6 @@ return require("packer").startup(function(use)
     end
   }
 
-  use { "arakkkkk/kanban.nvim" }
 
   use { "f-person/git-blame.nvim"}
 

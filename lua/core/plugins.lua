@@ -12,6 +12,7 @@ end
 
 local packer_bootstrap = ensure_packer()
 
+
 return require("packer").startup(function(use)
   use("wbthomason/packer.nvim")
   use("ellisonleao/gruvbox.nvim")
@@ -20,7 +21,7 @@ return require("packer").startup(function(use)
     requires = {
       "nvim-tree/nvim-web-devicons", -- optional, for file icons
     },
-   --  tag = "nightly", -- optional, updated every week. (see issue #1193)
+    --  tag = "nightly", -- optional, updated every week. (see issue #1193)
   }
   use("nvim-lualine/lualine.nvim")
   use("nvim-treesitter/nvim-treesitter")
@@ -119,9 +120,14 @@ return require("packer").startup(function(use)
       require('nvim_comment').setup()
     end
   }
+  use {
+    'VonHeikemen/fine-cmdline.nvim',
+    requires = {
+      { 'MunifTanjim/nui.nvim' }
+    }
+  }
 
-
-  use { "f-person/git-blame.nvim"}
+  use { "f-person/git-blame.nvim" }
 
   --
   -- Automatically set up your configuration after cloning packer.nvim

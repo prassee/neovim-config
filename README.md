@@ -13,14 +13,24 @@ All Lua config :-
 
 *Completed*
 
-- LSP 
-- Org mode 
+- LSP
+  - Scala
+  - Lua 
+  - Python
+  - Julia 
+  - Go 
+- Org mode
+  - Office , Home capture templates 
 - lualine
 - nvim tree 
 - treesitter
 - telescope
 - using `Ctrl+s` to save both Insert & Normal mode 
-- NeoGit & ToggleTerm - inline terminal with lazygit support
+- NeoGit, DiffView  & ToggleTerm - inline terminal with lazygit support
+- fine-cmdline.nvim (https://github.com/VonHeikemen/fine-cmdline.nvim) : 
+  replaces default cmd line with a fancy popup
+- whichkey - prompts the keybinding on keypress
+- Ctrl+s binding 
 
 *TODO*
 

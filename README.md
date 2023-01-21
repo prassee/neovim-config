@@ -32,6 +32,14 @@ All Lua config :-
 - whichkey - prompts the keybinding on keypress
 - Ctrl+s binding 
 
+*Setup*
+
+- Jetbrains Mono 
+- Kitty 
+- Ubuntu 22.04 
+- tmux 
+- fish shell 
+
 *TODO*
 
 - [ ] Markdown with preview  

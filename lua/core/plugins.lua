@@ -129,6 +129,19 @@ return require("packer").startup(function(use)
 
   use { "f-person/git-blame.nvim" }
 
+  use {
+    "folke/todo-comments.nvim",
+    -- TODO move this to a plugin config file
+    requires = "nvim-lua/plenary.nvim",
+    config = function()
+      require("todo-comments").setup {
+        -- your configuration comes here
+        -- or leave it empty to use the default settings
+        -- refer to the configuration section below
+      }
+    end
+  }
+
   --
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins

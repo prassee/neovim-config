@@ -131,7 +131,7 @@ return require("packer").startup(function(use)
 
   use {
     "folke/todo-comments.nvim",
-    -- TODO move this to a plugin config file
+    --  TODO:  move this to a plugin config file
     requires = "nvim-lua/plenary.nvim",
     config = function()
       require("todo-comments").setup {

@@ -1,0 +1,2 @@
+ require 'mind'.setup()
+

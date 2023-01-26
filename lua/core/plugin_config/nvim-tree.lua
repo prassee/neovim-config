@@ -33,8 +33,8 @@ require("nvim-tree").setup {
       -- modified_placement = "after",
       glyphs = {
         folder = {
-          arrow_closed = "⏵",
-          arrow_open = "⏷",
+          --arrow_closed = "⏵",
+          --arrow_open = "⏷",
           default = "",
           open = "",
           empty = "",

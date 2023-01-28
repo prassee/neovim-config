@@ -82,14 +82,14 @@ metals_config.on_attach = function(_, _)
         end,
       },
     },
-    {
-      type = "scala",
-      request = "launch",
-      name = "Run or Test",
-      metals = {
-        runType = "runOrTestFile",
-      },
-    },
+    -- {
+    --   type = "scala",
+    --   request = "launch",
+    --   name = "Run or Test",
+    --   metals = {
+    --     runType = "runOrTestFile",
+    --   },
+    -- },
     {
       type = "scala",
       request = "launch",

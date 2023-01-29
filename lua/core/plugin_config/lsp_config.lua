@@ -1,6 +1,6 @@
 require("mason").setup()
 require("mason-lspconfig").setup {
-  ensure_installed = { "sumneko_lua", "pyright" } --, "julials", "gopls" }, --  "solargraph",
+  ensure_installed = { "sumneko_lua", "pyright" ,"gopls" } --, "julials", "gopls" }, --  "solargraph",
 }
 
 local on_attach = function(_, _)

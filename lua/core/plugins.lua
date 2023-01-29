@@ -27,6 +27,7 @@ return require("packer").startup(function(use)
   use("nvim-treesitter/nvim-treesitter")
   -- completion
   use("hrsh7th/nvim-cmp")
+  use("hrsh7th/cmp-path") -- source for file system paths
   use("hrsh7th/cmp-nvim-lsp")
   use("hrsh7th/cmp-nvim-lsp-signature-help")
   use("L3MON4D3/LuaSnip")
@@ -83,7 +84,7 @@ return require("packer").startup(function(use)
     end,
   }
 
-  use { "ellisonleao/glow.nvim" }
+  -- use { "ellisonleao/glow.nvim" }
 
   use {
     "ckipp01/stylua-nvim",
@@ -150,7 +151,7 @@ return require("packer").startup(function(use)
       require 'mind'.setup()
     end
   }
-
+  use("stevearc/dressing.nvim") -- makes UI nicer
   --
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins

@@ -34,7 +34,5 @@ vim.wo.signcolumn = 'yes'
 vim.keymap.set('n', '<leader>s', '<Esc>:w<cr>')
 vim.keymap.set('i', '<leader>s', '<Esc>:w<cr>')
 
-
-
 vim.keymap.set('n', '<C-e>', '<End>')
 vim.keymap.set('n', '<C-a>', '<Esc>^i<Esc>')

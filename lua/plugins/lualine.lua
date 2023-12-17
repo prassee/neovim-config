@@ -5,7 +5,7 @@ return {
       options = {
         theme = 'catppuccin',
         icons_enabled = true,
-        component_separators = '|',
+        component_separators = '>',
         section_separators = '',
       }
     })

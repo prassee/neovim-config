@@ -4,9 +4,9 @@ return {
   config = function()
     require("toggleterm").setup()
     local Terminal = require('toggleterm.terminal').Terminal
-    local taskui   = Terminal:new({ cmd = "twtui", hidden = true, direction = "float" })
+    local Taskui   = Terminal:new({ cmd = "twtui", hidden = true, direction = "float" })
     function _taskui_toggle()
-      taskui:toggle()
+      Taskui:toggle()
     end
 
     vim.api.nvim_set_keymap("n", "<leader>tw", "<cmd>lua _taskui_toggle()<CR>", { noremap = true, silent = true })

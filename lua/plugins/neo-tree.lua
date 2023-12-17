@@ -9,11 +9,11 @@ return {
   config = function()
     require('neo-tree').setup {
       window = {
-        mappings  = {
+        mappings = {
           ["<tab>"] = {
-                "toggle_node", 
-                nowait = false, -- disable `nowait` if you have existing combos starting with this char that you want to use 
-            }
+            "toggle_node",
+            nowait = false,     -- disable `nowait` if you have existing combos starting with this char that you want to use
+          }
         }
       }
     }

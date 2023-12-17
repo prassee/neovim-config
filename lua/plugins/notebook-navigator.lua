@@ -1,8 +1,8 @@
 return {
-   "GCBallesteros/NotebookNavigator.nvim",
+  "GCBallesteros/NotebookNavigator.nvim",
   keys = {
-    { "]h", function() require("notebook-navigator").move_cell "d" end },
-    { "[h", function() require("notebook-navigator").move_cell "u" end },
+    { "]h",        function() require("notebook-navigator").move_cell "d" end },
+    { "[h",        function() require("notebook-navigator").move_cell "u" end },
     { "<leader>X", "<cmd>lua require('notebook-navigator').run_cell()<cr>" },
     { "<leader>x", "<cmd>lua require('notebook-navigator').run_and_move()<cr>" },
   },

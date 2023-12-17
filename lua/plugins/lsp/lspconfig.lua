@@ -22,6 +22,10 @@ return {
       opts.desc = "Show LSP references"
       keymap.set("n", "gR", "<cmd>Telescope lsp_references<CR>", opts) -- show definition, references
 
+      vim.keymap.set('n', '<leader>f', function()
+        vim.lsp.buf.format { async = true }
+      end, opts)
+
       opts.desc = "Go to declaration"
       keymap.set("n", "gD", vim.lsp.buf.declaration, opts) -- go to declaration
 
@@ -70,27 +74,27 @@ return {
       vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
     end
 
-       -- configure typescript server with plugin
+    -- configure typescript server with plugin
     lspconfig["tsserver"].setup({
       capabilities = capabilities,
       on_attach = on_attach,
     })
-    
+
     lspconfig["julials"].setup({
       capabilities = capabilities,
       on_attach = on_attach,
     })
- 
+
     lspconfig["rust_analyzer"].setup({
-capabilities = capabilities,
+      capabilities = capabilities,
       on_attach = on_attach,
 
     })
 
 
     -- configure css server
-          -- configure svelte server
-       -- configure prisma orm server
+    -- configure svelte server
+    -- configure prisma orm server
 
     -- configure graphql language server
     -- configure python server

@@ -36,3 +36,4 @@ vim.keymap.set('i', '<leader>s', '<Esc>:w<cr>')
 
 vim.keymap.set('n', '<C-e>', '<End>')
 vim.keymap.set('n', '<C-a>', '<Esc>^i<Esc>')
+vim.keymap.set('n', '<leader>qq', '<Esc>:wqall<cr>')

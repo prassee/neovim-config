@@ -10,12 +10,13 @@ return {
         ["core.dirman"] = {      -- Manages Neorg workspaces
           config = {
             workspaces = {
-              journal = "/data/neorg/journal",
-              learning = "/data/nerog/learning",
-              research = "/data/neorg/research",
-              develop = "/data/neorg/develop",
-              errands = "/data/neorg/errands",
+              journal = "~/neorg/journal",
+              learning = "~/nerog/learning",
+              research = "~/neorg/research",
+              develop = "~/neorg/develop",
+              errands = "~/neorg/errands",
             },
+            default_workspace = "journal",
           },
         },
       },

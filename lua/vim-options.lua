@@ -13,6 +13,8 @@ vim.opt.autoread = true
 
 vim.wo.number = true
 
+vim.g.maplocalleader = "\\"
+
 -- vim.o.clipboard = 'unnamedplus'
 
 -- Enable break indent

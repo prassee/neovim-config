@@ -5,7 +5,7 @@ return {
     require("toggleterm").setup()
     local Terminal = require('toggleterm.terminal').Terminal
     local Taskui   = Terminal:new({ cmd = "twtui", hidden = true, direction = "float" })
-    function _taskui_toggle()
+    local function _taskui_toggle()
       Taskui:toggle()
     end
 

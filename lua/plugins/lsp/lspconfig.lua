@@ -85,18 +85,6 @@ return {
       on_attach = on_attach,
     })
 
-    -- lspconfig["rust_analyzer"].setup({
-    --  capabilities = capabilities,
-    --  on_attach = on_attach,
-
-    -- })
-
-
-    -- configure css server
-    -- configure svelte server
-    -- configure prisma orm server
-
-    -- configure graphql language server
     -- configure python server
     lspconfig["pyright"].setup({
       capabilities = capabilities,
@@ -110,12 +98,10 @@ return {
             useLibraryCodeForTypes = true,
             typeCheckingMode = "basic",
             autoImportCompletion = true,
-
           },
         },
       },
     })
-
     -- configure lua server (with special settings)
     lspconfig["lua_ls"].setup({
       capabilities = capabilities,

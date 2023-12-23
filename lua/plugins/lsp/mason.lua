@@ -32,7 +32,8 @@ return {
         "pyright",
         "julials",
         "rust_analyzer",
-        "pyright"
+        "pyright",
+        "jsonls",
       },
       -- auto-install configured servers (with lspconfig)
       automatic_installation = true, -- not the same as ensure_installed

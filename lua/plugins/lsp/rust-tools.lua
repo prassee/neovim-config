@@ -37,8 +37,8 @@ return {
 
           opts.desc = "Show LSP type definitions"
           keymap.set("n", "gt", "<cmd>Telescope lsp_type_definitions<CR>", opts) -- show lsp type definitions
-          keymap.set("n", "gds", "<cmd>Telescope lsp_document_symbols<CR>")
-          keymap.set("n", "gws", "<cmd>Telescope lsp_workspace_symbols<CR>")
+          keymap.set("n", "gds", "<cmd>Telescope lsp_document_symbols<CR>", opts)
+          keymap.set("n", "gws", "<cmd>Telescope lsp_workspace_symbols<CR>", opts)
 
 
           opts.desc = "See available code actions"

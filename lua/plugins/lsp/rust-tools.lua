@@ -9,10 +9,12 @@ return {
     local codelldb_path = extension_path .. "adapter/codelldb"
     local liblldb_path = extension_path .. "lldb/lib/liblldb.dylib"
 
-
     rt.setup({
       dap = {
-        adapter = require("rust-tools.dap").get_codelldb_adapter(codelldb_path, liblldb_path),
+        adapter = require("rust-tools.dap").get_codelldb_adapter(
+          codelldb_path,
+          liblldb_path
+        ),
       },
       server = {
         on_attach = function(_, bufnr)
@@ -22,8 +24,8 @@ return {
           opts.desc = "Show LSP references"
           keymap.set("n", "gR", "<cmd>Telescope lsp_references<CR>", opts) -- show definition, references
 
-          vim.keymap.set('n', '<leader>f', function()
-            vim.lsp.buf.format { async = true }
+          vim.keymap.set("n", "<leader>f", function()
+            vim.lsp.buf.format({ async = true })
           end, opts)
 
           opts.desc = "Go to declaration"
@@ -39,7 +41,6 @@ return {
           keymap.set("n", "gt", "<cmd>Telescope lsp_type_definitions<CR>", opts) -- show lsp type definitions
           keymap.set("n", "gds", "<cmd>Telescope lsp_document_symbols<CR>", opts)
           keymap.set("n", "gws", "<cmd>Telescope lsp_workspace_symbols<CR>", opts)
-
 
           opts.desc = "See available code actions"
           keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, opts) -- see available code actions, in visual mode will apply to selection
@@ -69,8 +70,8 @@ return {
       tools = {
         hover_actions = {
           auto_focus = true,
-        }
-      }
+        },
+      },
     })
-  end
+  end,
 }

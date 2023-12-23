@@ -29,7 +29,7 @@ return {
             },
           },
         }
-      end
+      end,
     },
   },
   ft = { "scala", "sbt", "java" },
@@ -138,6 +138,5 @@ return {
       end,
       group = nvim_metals_group,
     })
-  end
-
+  end,
 }

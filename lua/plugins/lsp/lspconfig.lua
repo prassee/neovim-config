@@ -22,7 +22,7 @@ return {
       opts.desc = "Show LSP references"
       keymap.set("n", "gR", "<cmd>Telescope lsp_references<CR>", opts) -- show definition, references
 
-      vim.keymap.set('n', '<leader>f', vim.lsp.buf.format, opts)
+      vim.keymap.set("n", "<leader>f", vim.lsp.buf.format, opts)
 
       opts.desc = "Go to declaration"
       keymap.set("n", "gD", vim.lsp.buf.declaration, opts) -- go to declaration
@@ -96,7 +96,7 @@ return {
             autoSearchPaths = true,
             diagnosticMode = "workspace",
             useLibraryCodeForTypes = true,
-            typeCheckingMode = "basic",
+            typeCheckingMode = "struct",
             autoImportCompletion = true,
           },
         },
@@ -104,7 +104,15 @@ return {
     })
     lspconfig["jsonls"].setup({
       capabilities = capabilities,
-      on_attach = on_attach
+      on_attach = on_attach,
+      settings = {
+        json = {
+          format = {
+            enable = true,
+          },
+        },
+        validate = { enable = true },
+      },
     })
     -- configure lua server (with special settings)
     lspconfig["lua_ls"].setup({

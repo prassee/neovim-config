@@ -1,8 +1,9 @@
 return {
   "rcarriga/nvim-dap-ui",
   dependencies = {
-    "mfussenegger/nvim-dap"
+    "mfussenegger/nvim-dap",
   },
+
   config = function()
     require("dapui").setup()
 
@@ -18,8 +19,8 @@ return {
       dapui.close()
     end
 
-    vim.keymap.set("n", "<Leader>dt", ':DapToggleBreakpoint<CR>')
-    vim.keymap.set("n", "<Leader>dx", ':DapTerminate<CR>')
-    vim.keymap.set("n", "<Leader>do", ':DapStepOver<CR>')
-  end
+    vim.keymap.set("n", "<Leader>dt", ":DapToggleBreakpoint<CR>")
+    vim.keymap.set("n", "<Leader>dx", ":DapTerminate<CR>")
+    vim.keymap.set("n", "<Leader>do", ":DapStepOver<CR>")
+  end,
 }

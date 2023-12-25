@@ -1,4 +1,4 @@
-vim.cmd [[ set noswapfile ]]
+vim.cmd([[ set noswapfile ]])
 
 vim.cmd("set expandtab")
 vim.cmd("set tabstop=2")
@@ -26,16 +26,17 @@ vim.g.maplocalleader = "\\"
 -- Case-insensitive searching UNLESS \C or capital in search
 
 -- Keep signcolumn on by default
-vim.wo.signcolumn = 'yes'
+vim.wo.signcolumn = "yes"
 
 -- Decrease update time
 -- vim.o.updatetime = 250
 -- vim.o.timeoutlen = 300
 
+vim.keymap.set({ "n", "i" }, "<leader>s", "<Esc>:w<cr>")
 
-vim.keymap.set('n', '<leader>s', '<Esc>:w<cr>')
-vim.keymap.set('i', '<leader>s', '<Esc>:w<cr>')
+vim.keymap.set({ "n", "i" }, "<C-e>", "<End>")
+vim.keymap.set({ "n", "i" }, "<C-a>", "<Esc>^i<Esc>")
+vim.keymap.set("n", "<M-left>", "<Esc>:bprevious<Esc>")
+vim.keymap.set("n", "<M-right>", "<Esc>:bnext<Esc>")
 
-vim.keymap.set('n', '<C-e>', '<End>')
-vim.keymap.set('n', '<C-a>', '<Esc>^i<Esc>')
-vim.keymap.set('n', '<leader>qq', '<Esc>:wqall<cr>')
+vim.keymap.set("n", "<leader>qq", "<Esc>:wqall<cr>")

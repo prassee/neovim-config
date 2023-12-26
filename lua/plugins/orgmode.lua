@@ -46,6 +46,11 @@ return {
                     template = "** %^{What task todo ?} %?\n \t %u",
                     target = "~/org/errands.org",
                 },
+                u = {
+                    description = "Link to refer to",
+                    template = "** %^{Link} %?\n \t %u",
+                    target = "~/org/links.org",
+                },
             },
             org_todo_keywords = {
                 "TODO(t)",

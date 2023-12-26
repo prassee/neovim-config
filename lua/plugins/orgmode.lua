@@ -23,27 +23,27 @@ return {
             org_capture_templates = {
                 b = {
                     description = "Blogging - All Blogging",
-                    template = "* %^{Blog Title} %?  \n \t %u",
+                    template = "** %^{Blog Title} %?  \n \t %u",
                     target = "~/org/blogging.org",
                 },
                 l = {
                     description = "Learning - All Learnings",
-                    template = "* %^{What to learn ? } %?  \n \t  %u",
+                    template = "** %^{What to learn ? } %?  \n \t  %u",
                     target = "~/org/learning.org",
                 },
                 r = {
                     description = "Research - Research and observations for everything",
-                    template = "* %^{Which to research on ?} %? \t \n \t %u",
+                    template = "** %^{Which to research on ?} %? \t \n \t %u",
                     target = "~/org/research.org",
                 },
                 d = {
                     description = "Develop - Write some code",
-                    template = "* %^{What to code ?} %?\n \t %u",
+                    template = "** %^{What to code ?} %?\n \t %u",
                     target = "~/org/develop.org",
                 },
                 e = {
                     description = "Errands - All type of home tasks",
-                    template = "* %^{What task todo ?} %?\n \t %u",
+                    template = "** %^{What task todo ?} %?\n \t %u",
                     target = "~/org/errands.org",
                 },
             },

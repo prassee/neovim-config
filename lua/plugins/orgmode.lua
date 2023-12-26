@@ -55,8 +55,8 @@ return {
                 "DELEGATED(g)",
             },
             win_split_mode = "float",
-            org_agenda_files = "/data/org/**/*",
-            org_default_notes_file = "/data/org/refile.org",
+            org_agenda_files = "~/org/**/*",
+            org_default_notes_file = "~/org/refile.org",
             mappings = {
                 global = {
                     org_toggle_checkbox = "<C-S-Space>",

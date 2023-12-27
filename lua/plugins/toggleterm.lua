@@ -3,33 +3,33 @@ return {
     version = "*",
     config = function()
         require("toggleterm").setup()
-        local Terminal = require("toggleterm.terminal").Terminal
-        local Taskui =
-            Terminal:new({ cmd = "twtui", hidden = true, direction = "float" })
-        local Lazygit = Terminal:new({
+        local terminal = require("toggleterm.terminal").Terminal
+        local task_ui =
+            terminal:new({ cmd = "twtui", hidden = true, direction = "float" })
+        local lazy_git = terminal:new({
             cmd = "lazygit",
             hidden = true,
             direction = "float",
         })
-        function _taskui_toggle()
-            Taskui:toggle()
+        function Taskui_toggle()
+            task_ui:toggle()
         end
 
-        function _lazygit_toggle()
-            Lazygit:toggle()
+        function Lazygit_toggle()
+            lazy_git:toggle()
         end
 
         vim.api.nvim_set_keymap(
             "n",
             "<leader>tw",
-            "<cmd>lua _taskui_toggle()<CR>",
+            "<cmd>lua Taskui_toggle()<CR>",
             { noremap = true, silent = true }
         )
 
         vim.api.nvim_set_keymap(
             "n",
             "<leader>ng",
-            "<cmd>lua _lazygit_toggle()<CR>",
+            "<cmd>lua Lazygit_toggle()<CR>",
             { noremap = true, silent = true }
         )
 

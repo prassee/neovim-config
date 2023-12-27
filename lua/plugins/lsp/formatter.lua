@@ -11,6 +11,7 @@ return {
                 lua = { "stylua" },
                 rust = { "rustfmt" },
                 scala = { "scalafmt" },
+                markdown = { "mdformat" },
             },
 
             format_on_save = {
@@ -20,12 +21,5 @@ return {
                 async = false,
             },
         })
-
-        vim.keymap.set({ "n", "v" }, "<leader>sf", function()
-            conform.format({
-                lsp_fallback = true,
-                async = true,
-            })
-        end)
     end,
 }

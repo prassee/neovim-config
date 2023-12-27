@@ -13,8 +13,10 @@ return {
                 "scala",
                 "julia",
                 "org",
-                "norg",
+                "markdown",
+                "java",
             },
+            auto_install = true,
             highlight = { enable = true },
             indent = { enable = true },
         })

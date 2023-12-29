@@ -7,7 +7,7 @@ return {
         local codelldb = mason_registry.get_package("codelldb")
         local extension_path = codelldb:get_install_path() .. "/extension/"
         local codelldb_path = extension_path .. "adapter/codelldb"
-        local liblldb_path = extension_path .. "lldb/lib/liblldb.dylib"
+        local liblldb_path = extension_path .. "lldb/lib/liblldb.so"
 
         rt.setup({
             dap = {
@@ -17,6 +17,20 @@ return {
                 ),
             },
             server = {
+                settings = {
+                    ["rust_analyzer"] = { cargo = { allFeatures = true } },
+                },
+                checkOnSave = {
+                    allFeatures = true,
+                    overrideCommand = {
+                        "cargo",
+                        "clippy",
+                        "--workspace",
+                        "--message-format=json",
+                        "--all-targets",
+                        "--all-features",
+                    },
+                },
                 on_attach = function(_, bufnr)
                     local opts =
                         { noremap = true, silent = true, buffer = bufnr }
@@ -82,6 +96,12 @@ return {
                         vim.lsp.buf.code_action,
                         opts
                     )
+                    keymap.set(
+                        "n",
+                        "<C-space>",
+                        rt.hover_actions.hover_actions,
+                        opts
+                    )
 
                     opts.desc = "Smart rename"
                     keymap.set("n", "<leader>rn", vim.lsp.buf.rename, opts) -- smart rename
@@ -122,6 +142,44 @@ return {
                 end,
             },
             tools = {
+                executor = require("rust-tools.executors").quickfix,
+                inlay_hints = {
+                    -- automatically set inlay hints (type hints)
+                    -- default: true
+                    auto = true,
+
+                    -- Only show inlay hints for the current line
+                    only_current_line = false,
+
+                    -- whether to show parameter hints with the inlay hints or not
+                    -- default: true
+                    show_parameter_hints = true,
+
+                    -- prefix for parameter hints
+                    -- default: "<-"
+                    parameter_hints_prefix = "<- ",
+
+                    -- prefix for all the other hints (type, chaining)
+                    -- default: "=>"
+                    other_hints_prefix = "=> ",
+
+                    -- whether to align to the length of the longest line in the file
+                    max_len_align = false,
+
+                    -- padding from the left if max_len_align is true
+                    max_len_align_padding = 1,
+
+                    -- whether to align to the extreme right or not
+                    right_align = false,
+
+                    -- padding from the right if right_align is true
+                    right_align_padding = 7,
+
+                    -- The color of the hints
+                    highlight = "Comment",
+                },
+
+                reload_workspace_from_cargo_toml = true,
                 hover_actions = {
                     auto_focus = true,
                 },

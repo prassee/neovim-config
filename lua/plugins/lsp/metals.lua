@@ -9,15 +9,25 @@ return {
             config = function(self, opts)
                 -- Debug settings if you're using nvim-dap
                 local dap = require("dap")
-
                 dap.configurations.scala = {
                     {
                         type = "scala",
                         request = "launch",
-                        name = "RunOrTest",
+                        name = "Run or test with input",
                         metals = {
                             runType = "runOrTestFile",
-                            --args = { "firstArg", "secondArg", "thirdArg" }, -- here just as an example
+                            args = function()
+                                local args_string = vim.fn.input("Arguments: ")
+                                return vim.split(args_string, " +")
+                            end,
+                        },
+                    },
+                    {
+                        type = "scala",
+                        request = "launch",
+                        name = "Run or Test",
+                        metals = {
+                            runType = "runOrTestFile",
                         },
                     },
                     {
@@ -26,6 +36,15 @@ return {
                         name = "Test Target",
                         metals = {
                             runType = "testTarget",
+                        },
+                    },
+                    {
+                        type = "scala",
+                        request = "launch",
+                        name = "Run minimal2 main",
+                        metals = {
+                            mainClass = "minimal2.Main",
+                            buildTarget = "minimal",
                         },
                     },
                 }
@@ -39,10 +58,16 @@ return {
         -- Example of settings
         metals_config.settings = {
             showImplicitArguments = true,
+            showImplicitConversionsAndClasses = true,
+            showInferredType = true,
+            superMethodLensesEnabled = true,
+            enableSemanticHighlighting = true,
             excludedPackages = {
                 "akka.actor.typed.javadsl",
                 "com.github.swagger.akka.javadsl",
             },
+            -- testUserInterface = "Test Explorer",
+            serverVersion = "latest.snapshot",
         }
 
         -- *READ THIS*
@@ -50,7 +75,8 @@ return {
         -- you *have* to have a setting to display this in your statusline or else
         -- you'll not see any messages from metals. There is more info in the help
         -- docs about this
-        -- metals_config.init_options.statusBarProvider = "on"
+
+        metals_config.init_options.statusBarProvider = "on"
 
         -- Example if you are using cmp how to make sure the correct capabilities for snippets are set
         metals_config.capabilities =
@@ -66,14 +92,20 @@ return {
             map("n", "gR", "<cmd>Telescope lsp_references<CR>")
             map("n", "gds", "<cmd>Telescope lsp_document_symbols<CR>")
             map("n", "gws", "<cmd>Telescope lsp_workspace_symbols")
-            map("n", "<leader>cl", vim.lsp.codelens.run)
+            map("n", "<leader>mc", function()
+                require("telescope").extensions.metals.commands()
+            end)
+            map("n", "<leader>cl", function()
+                vim.lsp.codelens.run()
+                require("dap").repl.open()
+            end)
             map("n", "<leader>sh", vim.lsp.buf.signature_help)
             map("n", "<leader>rn", vim.lsp.buf.rename)
             map("n", "<leader>f", vim.lsp.buf.format)
             map("n", "<leader>ca", vim.lsp.buf.code_action)
 
             map("n", "<leader>ws", function()
-                require("metals").hover_worksheet()
+                require("metals").hover_worksheet({ border = "single" })
             end)
 
             -- all workspace diagnostics

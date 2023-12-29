@@ -1,19 +1,22 @@
-## Prassee Neovim Config
+## Prassee's Neovim Config
 
 ### Features
 
-- Lazy
-- LSP 
-    - Rust
-    - Lua
-    - Scala
-    - Python
-    - Julia
+- Plugin Manager : **Lazy**
+- LSP Support
+  - Rust
+  - Lua
+  - Scala
+  - Python
+  - Julia
 - Custom Keymaps - inherited from VSCode and my previous editors
 - Markdown previews
+- Catpuccin color theme
 
-### Tech Stack 
-- Neovim 
-- TaskWarrior
+### Tech Stack
+
+- Neovim
+- OrgMode
 - LazyGit
-- Markdown 
+- Markdown
+- Kitty Terminal

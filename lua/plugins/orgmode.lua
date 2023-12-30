@@ -36,6 +36,12 @@ return {
                     template = "** %^{Which to research on ?} %? \t \n \t %u",
                     target = "~/org/research.org",
                 },
+                s = {
+                    description = "Shopping / Bucket List",
+                    template = "** %^{What to buy / do } %? \t \n \t %u",
+                    target = "~/org/bucketlist.org",
+                },
+
                 d = {
                     description = "Develop - Write some code",
                     template = "** %^{What to code ?} %?\n \t %u",

@@ -5,13 +5,15 @@ vim.cmd("set tabstop=2")
 vim.cmd("set softtabstop=2")
 vim.cmd("set shiftwidth=2")
 
-vim.opt.cmdheight = 0
+vim.opt.cmdheight = 1
 vim.opt.termguicolors = true
 vim.opt.autowrite = true
 vim.opt.cursorline = true
 vim.opt.autoread = true
-
+vim.opt.shell = "fish"
+vim.opt.showcmd = true
 vim.wo.number = true
+vim.opt.smarttab = true
 
 vim.g.maplocalleader = "\\"
 
@@ -45,3 +47,5 @@ vim.keymap.set("n", "<M-down>", ":m .+1<CR>==") -- move line up(n)
 vim.keymap.set("n", "<M-up>", ":m .-2<CR>==") -- move line down(n)
 
 vim.keymap.set("n", "<leader>qq", "<Esc>:wqall<cr>")
+-- select all with Ctrl A
+vim.keymap.set("n", "<C-a>", "gg<S-v>G")

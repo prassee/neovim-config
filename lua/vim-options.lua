@@ -20,8 +20,8 @@ vim.g.maplocalleader = "\\"
 -- vim.o.clipboard = 'unnamedplus'
 
 -- Enable break indent
--- vim.o.breakindent = true
-
+vim.o.breakindent = true
+vim.wo.number = true
 -- Save undo history
 -- vim.o.undofile = true
 

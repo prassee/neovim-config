@@ -40,8 +40,11 @@ vim.keymap.set({ "n", "i" }, "<C-e>", "<End>")
 vim.keymap.set({ "n", "i" }, "<C-a>", "<Esc>^i<Esc>")
 
 -- go between prev & next visited buffer
-vim.keymap.set("n", "<M-left>", "<Esc>:bprevious<Esc>")
-vim.keymap.set("n", "<M-right>", "<Esc>:bnext<Esc>")
+vim.keymap.set("n", "<M-S-left>", "<Esc>:bprevious<Esc>")
+vim.keymap.set("n", "<M-S-right>", "<Esc>:bnext<Esc>")
+
+vim.keymap.set("n", "<M-left>", "g;")
+vim.keymap.set("n", "<M-right>", "g,")
 
 vim.keymap.set("n", "<M-down>", ":m .+1<CR>==") -- move line up(n)
 vim.keymap.set("n", "<M-up>", ":m .-2<CR>==") -- move line down(n)

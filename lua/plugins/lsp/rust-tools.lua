@@ -39,7 +39,7 @@ return {
                     opts.desc = "Show LSP references"
                     keymap.set(
                         "n",
-                        "gR",
+                        "<leader>gr",
                         "<cmd>Telescope lsp_references<CR>",
                         opts
                     ) -- show definition, references
@@ -50,12 +50,12 @@ return {
 
                     -- go to declaration
                     opts.desc = "Go to declaration"
-                    keymap.set("n", "gD", vim.lsp.buf.declaration, opts)
+                    keymap.set("n", "<leader>gD", vim.lsp.buf.declaration, opts)
 
                     opts.desc = "Show LSP definitions"
                     keymap.set(
                         "n",
-                        "gd",
+                        "<leader>gd",
                         "<cmd>Telescope lsp_definitions<CR>",
                         opts
                     ) -- show lsp definitions
@@ -63,7 +63,7 @@ return {
                     opts.desc = "Show LSP implementations"
                     keymap.set(
                         "n",
-                        "gi",
+                        "<leader>gi",
                         "<cmd>Telescope lsp_implementations<CR>",
                         opts
                     ) -- show lsp implementations
@@ -71,19 +71,19 @@ return {
                     opts.desc = "Show LSP type definitions"
                     keymap.set(
                         "n",
-                        "gt",
+                        "<leader>gt",
                         "<cmd>Telescope lsp_type_definitions<CR>",
                         opts
                     ) -- show lsp type definitions
                     keymap.set(
                         "n",
-                        "gds",
+                        "<leader>gds",
                         "<cmd>Telescope lsp_document_symbols<CR>",
                         opts
                     )
                     keymap.set(
                         "n",
-                        "gws",
+                        "<leader>gws",
                         "<cmd>Telescope lsp_workspace_symbols<CR>",
                         opts
                     )

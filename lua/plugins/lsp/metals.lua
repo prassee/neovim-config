@@ -86,12 +86,12 @@ return {
             require("metals").setup_dap()
 
             -- LSP mappings
-            map("n", "gD", "<cmd>Telescope lsp_definitions<CR>")
+            map("n", "<leader>gD", "<cmd>Telescope lsp_definitions<CR>")
             map("n", "K", vim.lsp.buf.hover)
-            map("n", "gi", "<cmd>Telescope lsp_implementations<CR>")
-            map("n", "gR", "<cmd>Telescope lsp_references<CR>")
-            map("n", "gds", "<cmd>Telescope lsp_document_symbols<CR>")
-            map("n", "gws", "<cmd>Telescope lsp_workspace_symbols")
+            map("n", "<leader>gi", "<cmd>Telescope lsp_implementations<CR>")
+            map("n", "<leader>gR", "<cmd>Telescope lsp_references<CR>")
+            map("n", "<leader>ds", "<cmd>Telescope lsp_document_symbols<CR>")
+            map("n", "<leader>wS", "<cmd>Telescope lsp_workspace_symbols")
             map("n", "<leader>mc", function()
                 require("telescope").extensions.metals.commands()
             end)

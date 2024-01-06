@@ -14,6 +14,9 @@ return {
         config = true, -- or `opts = {}`
     },
     {
+        "dhruvasagar/vim-table-mode",
+    },
+    {
         "nvim-orgmode/orgmode",
         dependencies = {
             { "nvim-treesitter/nvim-treesitter", lazy = true },
@@ -80,6 +83,7 @@ return {
                 org_todo_keywords = {
                     "TODO(t)",
                     "WAITING(w)",
+                    "DOING(i)",
                     "|",
                     "DONE(d)",
                     "DELEGATED(g)",

@@ -15,8 +15,8 @@
 
 ### Tech Stack
 
-- Neovim
-- OrgMode
 - LazyGit
 - Markdown
+- OrgMode
+- Neovim
 - Kitty Terminal

@@ -41,42 +41,42 @@ return {
                 org_capture_templates = {
                     b = {
                         description = "Blogging - All Blogging",
-                        template = "\n* %^{Blog Title} :%^{Tags}:  \n \t %T \n- %?",
+                        template = "\n* %^{Blog Title} :%^{Tags}:  \n \t %u \n- %?",
                         target = "~/org/blogging.org",
                     },
                     l = {
                         description = "Learning - All Learnings",
-                        template = "\n* %^{What to learn ? } :%^{Tags}: \n \t %T \n- %?",
+                        template = "\n* %^{What to Learn ? } :%^{Tags}: \n \t %u \n- %?",
                         target = "~/org/learning.org",
                     },
                     r = {
                         description = "Research - Research and observations for everything",
-                        template = "\n* %^{What to research on ?} :%^{Tags}: \n \t %T \n- %?",
+                        template = "\n* %^{What to Research on ?} :%^{Tags}: \n \t %u \n- %?",
                         target = "~/org/research.org",
                     },
                     h = {
                         description = "Habbit Tracker - Anything specific to test",
-                        template = "\n* %^{What habbit to track} :%^{Tags}: \n \t %T \n- %?",
+                        template = "\n* %^{What habbit to track} :%^{Tags}: \n \t %u \n- %?",
                         target = "~/org/habbit.org",
                     },
                     s = {
                         description = "Shopping / Bucket List",
-                        template = "\n* %^{What to buy / do } :%^{Tags}: \n \t %T \n- %?",
+                        template = "\n* %^{What to buy / do } :%^{Tags}: \n \t %u \n- %?",
                         target = "~/org/bucketlist.org",
                     },
                     d = {
                         description = "Develop - Write some code",
-                        template = "\n* %^{What to code ?} :%^{Tags}: \n \t %T \n- %?",
+                        template = "\n* %^{What to Code ?} :%^{Tags}: \n \t %u \n- %?",
                         target = "~/org/develop.org",
                     },
                     e = {
                         description = "Errands - All type of home tasks",
-                        template = "\n* %^{What task todo ?} :%^{Tags}: \n \t %T \n- %?",
+                        template = "\n* %^{What task todo ?} :%^{Tags}: \n \t %u \n- %?",
                         target = "~/org/errands.org",
                     },
                     u = {
                         description = "Link to refer to",
-                        template = "\n* %^{Link to note} :%^{Tags}: \n \t %T \n- %?",
+                        template = "\n* %^{Link to note} :%^{Tags}: \n \t %u \n- %?",
                         target = "~/org/links.org",
                     },
                 },

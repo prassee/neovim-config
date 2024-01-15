@@ -14,6 +14,6 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 -- local opts = {}
--- TODO: move all the keybindings to a new file
 require("vim-options")
+require("key-binidngs")
 require("lazy").setup({ { import = "plugins" }, { import = "plugins.lsp" } })

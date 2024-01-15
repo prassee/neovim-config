@@ -1,18 +1,18 @@
 return {
-    {
-        "akinsho/org-bullets.nvim",
-        config = function()
-            require("org-bullets").setup({
-                list = "•",
-                headlines = { "◉", "○", "✸", "✿" },
-            })
-        end,
-    },
-    {
-        "lukas-reineke/headlines.nvim",
-        dependencies = "nvim-treesitter/nvim-treesitter",
-        config = true, -- or `opts = {}`
-    },
+    -- {
+    --     "akinsho/org-bullets.nvim",
+    --     config = function()
+    --         require("org-bullets").setup({
+    --             list = "•",
+    --             headlines = { "◉", "○", "✸", "✿" },
+    --         })
+    --     end,
+    -- },
+    -- {
+    --     "lukas-reineke/headlines.nvim",
+    --     dependencies = "nvim-treesitter/nvim-treesitter",
+    --     config = true, -- or `opts = {}`
+    -- },
     {
         "dhruvasagar/vim-table-mode",
     },
